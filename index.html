@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ガストロノミー美谷</title>
+    <link rel="icon" href="/img/mitani-logo.png"/>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+
+$('#form').submit(function (event) {
+  var formData = $('#form').serialize();
+  $.ajax({
+    url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfaT9us7omxBfgquZqHDptjKzfXPtUwUVjdsMQmfStSc_Jh6g/formResponse",
+    data: formData,
+    type: "POST",
+    dataType: "xml",
+    statusCode: {
+      0: function () {
+        $(".end-message").slideDown();
+        $(".submit-btn").fadeOut();
+        //window.location.href = "thanks.html";
+      },
+      200: function () {
+        $(".false-message").slideDown();
+      }
+    }
+  });
+  event.preventDefault();
+});
+
+});
+    </script>
+  </head>
+  <body>
+    <!-------------------------------------------
+   header
+ ------------------------------------------->
+    <header>
+
+      <div class="container clear">
+        <div class="header-left">
+          <img
+            src="./img/logo.png"
+            alt="ガストロノミー美谷のロゴ"
+            class="header-logo"
+          />
+        </div>
+        <div class="header-right">
+          <ul class="header-nav clear">
+            <li class="header-nav-item">
+              <a href="#top">HOME</a>
+            </li>
+            <li class="header-nav-item">
+              <a href="#about">ABOUT</a>
+            </li>
+            <li class="header-nav-item">
+              <a href="#menu">MENU</a>
+            </li>
+            <li class="header-nav-item">
+              <a href="#infoaccess">INFO&ACCESS</a>
+            </li>
+            <li class="header-nav-item">
+              <a href="#contact">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+        <div class="hamburger-menu">
+          <input type="checkbox" id="menu-btn-check">
+          <label for="menu-btn-check" class="menu-btn"><span></span></label>
+  
+          <div class="menu-content" id="menu-content">
+            <ul>
+                <li>
+                    <a href="#top">HOME</a>
+                </li>
+                <li>
+                    <a href="#about">ABOUT</a>
+                </li>
+                <li>
+                    <a href="#menu">MENU</a>
+                </li>
+                <li>
+                    <a href="#infoaccess">INFO&ACCESS</a>
+                </li>
+                <li>
+                    <a href="#contact">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+      </div>
+  
+      <script>
+        $(function() {
+          $('#menu-content ul li a').on('click', function(event) {
+            $('#menu-btn-check').prop('checked', false);
+          });
+        });
+        </script>
+  
+  
+      </div>
+    </header>
+
+    <!-------------------------------
+   top 
+  --------------------------------->
+  <a name="top"></a>
+    <section class="top">
+
+      <div class="container">
+        <p class="top-title">口福な、ひとときを。</p>
+      </div>
+        <ul class="follow-me">
+          <li><a href="https://www.instagram.com/gastronomymitani/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></li> <li><a href="https://www.facebook.com/kimizushi/" target="_blank"><i class="fab fa-facebook-f fa-2x"></i></a></li>
+         
+      </ul>
+    </section>
+    <!--------------------------------
+   about 
+  ---------------------------------->
+  <a name="about"></a>
+    <section class="about section">
+
+      <div class="container clear about-container">
+        <h1 class="about-title">ABOUT</h1>
+        <div class="about1">
+          <h3>
+            和と伊の創作美食 <br> 「ガストロノミー美谷」
+
+          </h3>
+        </div>
+        <div class="about2">
+          <h4>
+            宿場町の風情を感じられる旧東海道桑名宿。 <br> 慶応4年、
+            東海道五十三次桑名宿に「喜美寿司」として創業。 <br>
+            令和2年9月2日和と伊の創作美食「ガストロノミー美谷」として
+            リニューアルオープン致しました。
+          </h4>
+        </div>
+        <div class="icon-img">
+          <img src="./img//logo.png" alt="ガストロノミー美谷のロゴ" />
+        </div>
+        <div class="about-img-wrapper img-wrapper">
+          <div class="img">
+            <img src="./img/kitchen.jpg" alt="" class="photo"/>
+          </div>
+          <div class="img">
+            <img src="./img/space.JPG" alt="" class="photo"/>
+          </div>
+          <div class="img">
+            <img src="./img/tree.JPG" alt="" class="photo"/>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-------------------------------------
+     menu
+   --------------------------------------->
+   <a name="menu"></a>
+    <section class="menu section">
+      <div class="container">
+        <h1>MENU</h1>
+        <div class="lunch">
+          <h2>Lunch</h2>
+          <div class="menu-item">
+            <h3>おひるnoごはん</h3>
+            <h4>
+              今日の主菜　副菜いろいろ <br />
+              黒米 今日の汁物　デザート　飲物 <br />
+              <span>1,500</span>円
+            </h4>
+          </div>
+          <div class="menu-item">
+            <h3>おひるnoぱすた</h3>
+            <h4>
+              前菜盛り合わせ　今日のパスタ <br />
+              デザート　飲物 <br />
+              <span>1,800</span>円
+            </h4>
+          </div>
+
+        </div>
+        <div class="dinner">
+          <h2>Dinner</h2>
+          <div class="menu-item">
+            <h3>夜no美食「口福」</h3>
+            <h4>
+              アミューズ　前菜　変わり茶碗蒸し <br>
+               パスタ　主菜　寿司　デザート　飲物 <br />
+              <span>5,000</span>円
+            </h4>
+          </div>
+          <div class="menu-item">
+            <h3>夜noぱすた「美谷」</h3>
+            <h4>前菜盛り合わせ　お好きなパスタ <br>
+              デザート　飲物 <br />
+              <span>2,500</span>円
+            </h4>
+          </div>
+
+        </div>
+        <div class="img-wrapper">
+          <div class="img">
+            <img src="./img/dishes.JPG" alt="" class="photo"/>
+          </div>
+          <div class="img">
+            <img src="./img/sushi.jpg" alt="" class="photo"/>
+          </div>
+          <div class="img">
+            <img src="./img/sparkling.JPG" alt="" class="photo"/>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---------------------------------------
+     information&Access
+    ------------------------------------ -->
+    <a name="infoaccess"></a>
+    <section class="infoaccess section">
+      <div class="container">
+        <div class="info">
+          <h1>INFORMATION</h1>
+          <h3>営業時間</h3>
+          <h4>
+            Lunch 　11:30-14:00 (L.O. 13:30) <br />
+            Dinner　17:30-21:00 (L.O. 20:30) <br /><br />
+
+            定休日：水曜日
+          </h4>
+        </div>
+        <div class="access">
+          <h1>ACCESS</h1>
+          <div class="map">
+            <!-- google map -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6531.239481237503!2d136.696069!3d35.066245!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x73e2591abf38e741!2z44Ks44K544OI44Ot44OO44Of44O8IOe-juiwtw!5e0!3m2!1sja!2sjp!4v1625736770021!5m2!1sja!2sjp"
+              width="100%"
+              height="400"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          <h4>
+            〒511-0022 <br />
+            三重県桑名市江戸町１２
+          </h4>
+          <h4>JR/近鉄「桑名駅」東口より東へ徒歩15分</h4>
+          <div class="parking">
+            <!-- parkingmap -->
+          </div>
+          <h4>
+            駐車場は当店右横の奥に４台あり <br> 満車の場合は近隣に無料駐車場あり
+          </h4>
+        </div>
+
+        <div class="img-wrapper">
+          <div class="img">
+            <img src="./img/leaf.JPG" alt="" class="photo" />
+          </div>
+          <div class="img">
+            <img src="./img/dog.JPG" alt="" class="photo" />
+          </div>
+          <div class="img">
+            <img src="./img/bottle.JPG" alt="" class="photo" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!----------------------------------
+       contact
+      ------------------------------------ -->
+      <a name="contact"></a>
+    <div class="contact section">
+      <div class="container">
+        <h1>CONTACT</h1>
+
+        <div class="form-wrapper">
+          <form
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfaT9us7omxBfgquZqHDptjKzfXPtUwUVjdsMQmfStSc_Jh6g/formResponse"
+            id="form"
+          >
+            <div class="box">
+              <label for="name">お名前</label>
+              <input
+                type="text"
+                name="entry.583710515"
+                id="name"
+                placeholder="（例）美谷　太郎"
+                required
+              />
+            </div>
+            <div class="box">
+              <label for="mail">メールアドレス</label>
+              <input
+                type="mail"
+                name="entry.594302002"
+                id="mail"
+                placeholder="（例）example@example.co.jp"
+                required
+              />
+            </div>
+            <div class="box">
+              <textarea
+                name="entry.1530992091"
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="ご自由にご記入ください"
+              ></textarea
+              ><!-- /# -->
+            </div>
+            <button type="submit" class="btn submit-btn">送信</button>
+          </form>
+          <h5 class="end-message">お問い合わせいただきありがとうございます。</h5>
+          <h5 class="false-message">送信失敗です。</h5>
+        </div>
+
+      </div>
+    </div>
+    <!-------------------------------------
+         footer
+        -------------------------------- -->
+    <footer>
+      <div class="container clear">
+        <ul class="follow-me">
+          <li><a href="https://www.instagram.com/gastronomymitani/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></li> <li><a href="https://www.facebook.com/kimizushi/" target="_blank"><i class="fab fa-facebook-f fa-2x"></i></a></li>
+         
+      </ul>
+  </li>
+        <p class="copyright">
+          Copyright(C) 2021 Gastronomy MITANI All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
